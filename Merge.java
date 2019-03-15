@@ -1,7 +1,8 @@
 public class Merge{
 
 public static void mergesort(int[] data){
-
+  if(data.length <= 1){return;}
+  mergesort(data,0,data.length-1);
 }
 
 public static void mergesort(int[] data, int lo, int hi){
@@ -13,7 +14,7 @@ public static void mergesort(int[] data, int lo, int hi){
 }
 
 public static void merge(int[] data, int lo, int point, int hi){
-  
+
 }
 
 public static void main(String[] args){
