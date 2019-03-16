@@ -71,7 +71,7 @@ return result + "]";
 }
 
 public static void main(String[] args){
-  int[] data = new int[] {8,6,7,5,3,0,9,10,21,2,14,4,5,2,7,9,12,6};
+  int[] data = new int[] {8,6,7,5,3};
   System.out.println(printArray(data));
   mergesort(data);
   System.out.println(printArray(data));
