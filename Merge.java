@@ -21,7 +21,7 @@ public static int[] copy(int[] data){
 public static void mergesort(int[] data, int lo, int hi){
   if(lo >= hi){return;}
   else if(data.length < 2){return;}
-  elfe if(data.length == 2){
+  else if(data.length == 2){
     if(data[0] <= data[1]){return;}
     else{
       exchange(0,1,data);
@@ -56,7 +56,22 @@ public static void mergesort(int[] data, int[] temp, int lo, int hi){
 
 }
 
+public static String printArray(int[] ary) {
+String result = "[";
+for (int i = 0; i < ary.length ; i++) {
+result += " " + ary[i];
+if (i != ary.length - 1) {
+  result += ",";
+}
+}
+return result + "]";
+}
+
 public static void main(String[] args){
+  int[] data = new int[] {8,6,7,5,3,0,9,10,21,2,14,4,5,2,7,9,12,6};
+  System.out.println(printArray(data));
+  mergesort(data);
+  System.out.println(printArray(data));
 
 }
 
