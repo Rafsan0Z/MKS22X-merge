@@ -19,6 +19,10 @@ public static void merge(int[] data, int lo, int point, int hi){
   }
 }
 
+public static void mergesort(int[] data, int[] temp, int lo, int hi){
+  
+}
+
 public static void main(String[] args){
 
 }
