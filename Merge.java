@@ -42,6 +42,19 @@ public static int[] merge(int[] data, int lo, int point, int hi){
   for(int j = 0; j < b.length; j++){
     b[j] = data[point+1+j];
   }
+
+}
+
+public static void insertionSort(int[] ary, int lo, int hi) {
+  for(int i = lo; i < hi+1; i++) {
+    int current = ary[i];
+    int place = i;
+    while(place != 0 && ary[place - 1] > current) {
+      ary[place] = ary[place - 1];
+      ary[place - 1] = current;
+      place--;
+    }
+  }
 }
 
 public static void mergesort(int[] data, int[] temp, int lo, int hi){
