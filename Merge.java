@@ -20,6 +20,13 @@ public static int[] copy(int[] data){
 
 public static void mergesort(int[] data, int lo, int hi){
   if(lo >= hi){return;}
+  if(data.length == 2 && data[0] > data[1]){
+    exchange(0,1,data);
+    return;
+  }
+  if(data.length == 2 && data[0] <= data[1]){
+    return;
+  }
   int point = (lo+hi)/2;
   mergesort(data,lo,point);
   mergesort(data,point+1,hi);
