@@ -37,8 +37,10 @@ public static void mergesort(int[] data, int lo, int hi){
 }
 
 public static void merge(int[] data, int lo, int point, int hi){
-  for(int i = lo, j = point; point < hi){
-    if()
+  for(int i = lo, j = point; i < point && j < hi; i = j+1, i++){
+    if(data[i] > data[j]){
+      
+    }
   }
 }
 
