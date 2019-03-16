@@ -20,7 +20,7 @@ public static int[] copy(int[] data){
 
 public static void mergesortHelper(int[] data, int lo, int hi){
   if(lo >= hi){return;}
-  else if(data.length == 2){
+  else if(hi-lo+1 == 2){
     if(data[0] <= data[1]){return;}
     else{
       exchange(0,1,data);
@@ -30,7 +30,7 @@ public static void mergesortHelper(int[] data, int lo, int hi){
   int point = (lo+hi)/2;
   mergesortHelper(data,lo,point);
   mergesortHelper(data,point+1,hi);
-  data = merge(data,lo,point,hi);
+  //data = merge(data,lo,point,hi);
 }
 
 public static int[] merge(int[] data, int lo, int point, int hi){
