@@ -38,9 +38,15 @@ public static void mergesort(int[] data, int lo, int hi){
 
 public static int[] merge(int[] data, int lo, int point, int hi){
   int[] result = new int[data.length];
+  int index = 0;
   for(int i = lo, j = point; i < point && j < hi; i = j+1, i++){
     if(data[i] > data[j]){
-
+      result[index] = data[j];
+      index++;
+    }
+    else{
+      result[index] = data[i];
+      index++;
     }
   }
   return result;
