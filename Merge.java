@@ -6,7 +6,8 @@ public static void mergesort(int[] data){
 }
 
 public static void Mergesort(int[] data){
-
+  int[] temp = copy(data);
+  mergesort(data,temp,0,data.length-1);
 }
 
 public static int[] copy(int[] data){
