@@ -40,12 +40,12 @@ public static int[] merge(int[] data, int lo, int point, int hi){
   int[] result = new int[data.length];
   int index = 0;
   for(int i = lo, j = point; i < point && j < hi; i = j+1, i++){
-    if(data[i] > data[j]){
-      result[index] = data[j];
+    if(data[i] <= data[j]){
+      result[index] = data[i];
       index++;
     }
     else{
-      result[index] = data[i];
+      result[index] = data[j];
       index++;
     }
   }
