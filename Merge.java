@@ -30,23 +30,11 @@ public static void mergesortHelper(int[] data, int lo, int hi){
   int point = (lo+hi)/2;
   mergesortHelper(data,lo,point);
   mergesortHelper(data,point+1,hi);
-  //data = merge(data,lo,point,hi);
+  data = merge(data,lo,point,hi);
 }
 
 public static int[] merge(int[] data, int lo, int point, int hi){
-  int[] result = new int[data.length];
-  int index = 0;
-  for(int i = lo, j = point; i <= point && j <= hi; i = j+1, i++){
-    if(data[i] <= data[j]){
-      result[index] = data[i];
-      index++;
-    }
-    else{
-      result[index] = data[j];
-      index++;
-    }
-  }
-  return result;
+  
 }
 
 public static void mergesort(int[] data, int[] temp, int lo, int hi){
