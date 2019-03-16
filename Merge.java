@@ -32,16 +32,18 @@ public static void mergesort(int[] data, int lo, int hi){
   int point = (lo+hi)/2;
   mergesort(data,lo,point);
   mergesort(data,point+1,hi);
-  merge(data,lo,point,hi);
+  data = merge(data,lo,point,hi);
 }
 }
 
-public static void merge(int[] data, int lo, int point, int hi){
+public static int[] merge(int[] data, int lo, int point, int hi){
+  int[] result = new int[data.length];
   for(int i = lo, j = point; i < point && j < hi; i = j+1, i++){
     if(data[i] > data[j]){
-      
+
     }
   }
+  return result;
 }
 
 public static void mergesort(int[] data, int[] temp, int lo, int hi){
