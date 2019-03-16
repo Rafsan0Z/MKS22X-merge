@@ -30,10 +30,10 @@ public static void mergesortHelper(int[] data, int lo, int hi){
   int point = (lo+hi)/2;
   mergesortHelper(data,lo,point);
   mergesortHelper(data,point+1,hi);
-  data = merge(data,lo,point,hi);
+  insertionSort(data,lo,hi);
 }
 
-public static int[] merge(int[] data, int lo, int point, int hi){
+public static void merge(int[] data, int lo, int point, int hi){
   int[] a = new int[point-lo+1];
   int[] b = new int[hi-point+1];
   for(int i = 0; i < a.length; i++){
