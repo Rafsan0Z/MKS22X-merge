@@ -6,7 +6,15 @@ public static void mergesort(int[] data){
 }
 
 public static void Mergesort(int[] data){
-  
+
+}
+
+public static int[] copy(int[] data){
+  int[] result = new int[data.length];
+  for(int i = 0; i < data.length; i++){
+    result[i] = data[i];
+  }
+  return result;
 }
 
 public static void mergesort(int[] data, int lo, int hi){
