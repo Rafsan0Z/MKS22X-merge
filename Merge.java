@@ -2,7 +2,7 @@ public class Merge{
 
 public static void mergesort(int[] data){
   if(data.length <= 1){return;}
-  mergesort(data,0,data.length-1);
+  mergesortHelper(data,0,data.length-1);
 }
 
 public static void Mergesort(int[] data){
@@ -18,9 +18,8 @@ public static int[] copy(int[] data){
   return result;
 }
 
-public static void mergesort(int[] data, int lo, int hi){
+public static void mergesortHelper(int[] data, int lo, int hi){
   if(lo >= hi){return;}
-  else if(data.length < 2){return;}
   else if(data.length == 2){
     if(data[0] <= data[1]){return;}
     else{
@@ -28,12 +27,10 @@ public static void mergesort(int[] data, int lo, int hi){
       return;
     }
   }
-  else{
   int point = (lo+hi)/2;
-  mergesort(data,lo,point);
-  mergesort(data,point+1,hi);
-  data = merge(data,lo,point,hi);
-}
+  mergesortHelper(data,lo,point);
+  mergesortHelper(data,point+1,hi);
+  data = merge(data,lo,point+1,hi);
 }
 
 public static int[] merge(int[] data, int lo, int point, int hi){
