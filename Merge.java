@@ -58,6 +58,10 @@ public static void mergesort(int[] data, int[] temp, int lo, int hi){
   //merge code
 }
 
+public static void merge(int[] data, int[] temp){
+  //to be implemented!
+}
+
 public static void exchange(int num1, int num2, int[] data){ // these are indices
   int temp = data[num1];
   data[num1] = data[num2];
