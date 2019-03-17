@@ -51,7 +51,11 @@ public static void insertionSort(int[] ary, int lo, int hi) {
 }
 
 public static void mergesort(int[] data, int[] temp, int lo, int hi){
-
+  if(hi == lo){return;}
+  int point = (hi+lo)/2;
+  mergesort(data,temp,lo,point);
+  mergesort(data,temp,point+1,hi);
+  //merge code
 }
 
 public static void exchange(int num1, int num2, int[] data){ // these are indices
