@@ -21,16 +21,16 @@ public static int[] copy(int[] data){
 public static void mergesortHelper(int[] data, int lo, int hi){
   if(lo >= hi){return;}
   else if(hi-lo+1 == 2){
-    if(data[0] <= data[1]){return;}
+    if(data[lo] <= data[hi]){return;}
     else{
-      exchange(0,1,data);
+      exchange(hi,lo,data);
       return;
     }
   }
   int point = (lo+hi)/2;
   mergesortHelper(data,lo,point);
   mergesortHelper(data,point+1,hi);
-  insertionSort(data,lo,hi);
+  merge(data,lo,point,hi);
 }
 
 public static void merge(int[] data, int lo, int point, int hi){
