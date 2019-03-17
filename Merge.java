@@ -85,7 +85,7 @@ return result + "]";
 }
 
 public static void main(String[] args){
-  int[] data = new int[] {8,6,7,5,3};
+  int[] data = new int[] {8,6,7,5,3,8,1,4,2,4,6,4};
   System.out.println(printArray(data));
   mergesort(data);
   System.out.println(printArray(data));
