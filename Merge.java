@@ -29,13 +29,18 @@ public static void mergesortHelper(int[] data, int lo, int hi){
   }
   int point = (lo+hi)/2;
   mergesortHelper(data,lo,point);
-  mergesortHelper(data,point+1,hi);
+  mergesortHelper(data,point,hi);
   merge(data,lo,point,hi);
 }
 
 public static void merge(int[] data, int lo, int point, int hi){
-  // to be implemented!
-
+  int counter = lo;
+  for(int i = lo+1; i <= hi; i++){
+    if(data[counter] > data[i]){
+      exchange(counter,i,data);
+      counter++;
+    }
+  }
 }
 
 public static void insertionSort(int[] ary, int lo, int hi) {
