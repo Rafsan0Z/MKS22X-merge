@@ -34,14 +34,7 @@ public static void mergesortHelper(int[] data, int lo, int hi){
 }
 
 public static void merge(int[] data, int lo, int point, int hi){
-  int[] a = new int[point-lo+1];
-  int[] b = new int[hi-point+1];
-  for(int i = 0; i < a.length; i++){
-    a[i] = data[lo+i];
-  }
-  for(int j = 0; j < b.length; j++){
-    b[j] = data[point+1+j];
-  }
+  // to be implemented!
 
 }
 
