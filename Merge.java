@@ -85,10 +85,11 @@ return result + "]";
 }
 
 public static void main(String[] args){
-  int[] data = new int[] {8,6,7,5,3,12,11,10,34,21};
-  System.out.println(printArray(data));
-  mergesort(data);
-  System.out.println(printArray(data));
+  int[] data = new int[] {3,3,1,1,2,2};
+  int[] data2 = new int[] {2,6,8,9,3,5};
+  System.out.println(printArray(data2));
+  mergesort(data2);
+  System.out.println(printArray(data2));
 
 }
 
