@@ -29,19 +29,24 @@ public static void mergesortHelper(int[] data, int lo, int hi){
   }
   int point = (lo+hi)/2;
   mergesortHelper(data,lo,point);
-  mergesortHelper(data,point+1,hi);
+  mergesortHelper(data,point,hi);
   merge(data,lo,point,hi);
 }
 
 public static void merge(int[] data, int lo, int point, int hi){
-  int counter = point;
-  for(int i = point+1; i <= hi; i++){
-    if(data[counter] > data[i]){
-      exchange(counter,i,data);
+  int counter = point+1;
+  int stop = counter;
+  int index = lo;
+  boolean loop = true;
+  while(counter != hi && index < stop && loop){
+    if(data[index] > data[counter]){
+      exchange(counter,index,data);
+      stop++;
       counter++;
     }
   }
 }
+
 
 public static void insertionSort(int[] ary, int lo, int hi) {
   for(int i = lo; i < hi+1; i++) {
@@ -86,7 +91,7 @@ return result + "]";
 
 public static void main(String[] args){
   int[] data = new int[] {3,3,1,1,2,2};
-  int[] data2 = new int[] {2,6,8,9,3,5};
+  int[] data2 = new int[] {2,6,8,9,3,5,12,13,10,7};
   System.out.println(printArray(data2));
   mergesort(data2);
   System.out.println(printArray(data2));
