@@ -30,14 +30,30 @@ public static void mergesortHelper(int[] data, int lo, int hi){
   int point = (lo+hi)/2;
   mergesortHelper(data,lo,point);
   mergesortHelper(data,point,hi);
-  merge(data,lo,point,hi);
+  //merge(data,lo,point,hi);
 }
 
 public static void merge(int[] data, int lo, int point, int hi){
   int counter = point+1;
+  int compare = counter;
   int stop = counter;
   int index = lo;
-  while(counter < hi && index < stop){
+  while(counter < hi){
+    for(int i = lo; i < stop; i++){
+      if(data[i] > data[counter]){
+        exchange(counter,i,data);
+        stop++;
+        counter++;
+        compare++;
+        i = stop;
+      }
+    }
+    if(compare == counter){
+      counter++;
+      compare++;
+    }
+  }
+  /*while(counter < hi && index < stop){
     if(data[index] > data[counter]){
       exchange(counter,index,data);
       stop++;
@@ -45,7 +61,7 @@ public static void merge(int[] data, int lo, int point, int hi){
       index = lo;
     }
     index++;
-  }
+  }*/
 }
 
 
