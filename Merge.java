@@ -37,13 +37,14 @@ public static void merge(int[] data, int lo, int point, int hi){
   int counter = point+1;
   int stop = counter;
   int index = lo;
-  boolean loop = true;
-  while(counter != hi && index < stop && loop){
+  while(counter < hi && index < stop){
     if(data[index] > data[counter]){
       exchange(counter,index,data);
       stop++;
       counter++;
+      index = lo;
     }
+    index++;
   }
 }
 
