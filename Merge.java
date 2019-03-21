@@ -81,28 +81,28 @@ public static void mergesort(int[] data, int lo, int hi){
   }
   mergesort(LSort,0,limit1);
   mergesort(RSort,0,limit2);
-
+  merge(data,LSort,RSort);
 }
 
 public static void merge(int[] orig, int[] data1, int[] data2){
   int index = 0;
   int i = 0;
   int j = 0;
-  while(index < data.length){
+  while(index < orig.length){
     if(data1.length <= i){
-      data[index] = data2[j];
+      orig[index] = data2[j];
       j++;
     }
     else if(data2.length <= j){
-      data[index] = data1[i];
+      orig[index] = data1[i];
       i++;
     }
     else if(data2[j] >= data1[i]){
-      data[index] = data1[i];
+      orig[index] = data1[i];
       i++;
     }
     else{
-      data[index] = data2[j];
+      orig[index] = data2[j];
       j++;
     }
     index++;
