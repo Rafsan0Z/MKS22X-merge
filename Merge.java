@@ -10,9 +10,9 @@ public static void Mergesort(int[] data){
   mergesortHelper(data,temp,0,data.length-1);
 }
 
-public static int[] copy(int[] data){
+public static int[] copy(int[] data, int lo, int hi){
   int[] result = new int[data.length];
-  for(int i = 0; i < data.length; i++){
+  for(int i = lo; i <= hi; i++){
     result[i] = data[i];
   }
   return result;
@@ -30,7 +30,7 @@ public static void merge(int[] data, int[] temp, int lo, int point, int hi, int 
   if(current == 0){
     current = 1;
   }
-  else if(current = 1){
+  else if(current == 1){
     current = 0;
   }
 }
