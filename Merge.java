@@ -93,7 +93,7 @@ public static void mergesort(int[] data, int lo, int hi){
       data[index] = LSort[i];
       i++;
     }
-    else if(data[j] >= data[i]){
+    else if(RSort[j] >= LSort[i]){
       data[index] = LSort[i];
       i++;
     }
@@ -128,7 +128,7 @@ return result + "]";
 
 public static void main(String[] args){
   int[] data = new int[] {3,3,1,1,2,2};
-  int[] data2 = new int[] {2,6,8,9,3,5,12,13,10,7};
+  int[] data2 = new int[] {2,6,8,9,3};
   System.out.println(printArray(data2));
   mergesort(data2);
   System.out.println(printArray(data2));
