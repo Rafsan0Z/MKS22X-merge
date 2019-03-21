@@ -6,7 +6,6 @@ public static void mergesort(int[] data){
 }
 
 public static void Mergesort(int[] data){
-  int[] temp = copy(data);
   mergesortHelper(data,temp,0,data.length-1);
 }
 
@@ -21,6 +20,7 @@ public static int[] copy(int[] data, int lo, int hi){
 public static void mergesortHelper(int[] data, int[] temp, int lo, int hi){
   if(lo >= hi){return;}
   int point = (hi+lo)/2;
+  int[] temp = copy(data,lo,hi);
   mergesortHelper(data,temp,lo,point);
   mergesortHelper(data,temp,point+1,hi);
   merge(data,temp,lo,point,hi,1);
