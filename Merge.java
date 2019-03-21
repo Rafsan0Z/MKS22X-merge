@@ -2,12 +2,12 @@ public class Merge{
 
 public static void mergesort(int[] data){
   if(data.length <= 1){return;}
-  mergesortHelper(data,0,data.length-1);
+  mergesort(data,0,data.length-1);
 }
 
 public static void Mergesort(int[] data){
   int[] temp = copy(data);
-  mergesort(data,temp,0,data.length-1);
+  mergesortHelper(data,temp,0,data.length-1);
 }
 
 public static int[] copy(int[] data){
