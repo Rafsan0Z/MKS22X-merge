@@ -85,10 +85,9 @@ public static void mergesort(int[] data, int lo, int hi){
 }
 
 public static void merge(int[] orig, int[] data1, int[] data2){
-  int index = 0;
   int i = 0;
   int j = 0;
-  while(index < orig.length){
+  for(int index = 0; index < orig.length; index++){
     if(data1.length <= i){
       orig[index] = data2[j];
       j++;
@@ -105,7 +104,6 @@ public static void merge(int[] orig, int[] data1, int[] data2){
       orig[index] = data2[j];
       j++;
     }
-    index++;
   }
 }
 
