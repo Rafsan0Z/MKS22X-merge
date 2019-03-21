@@ -80,8 +80,9 @@ public static void insertionSort(int[] ary, int lo, int hi) {
 public static void mergesort(int[] data, int[] temp, int lo, int hi){
   if(hi == lo){return;}
   int point = (hi+lo)/2;
-  for(int i = lo; i <= hi; i++){
-    temp[i] = data[i];
+  int[] LSort = new int[point+1];
+  for(int i = 0; i <= point; i++){
+    LSort[i] = data[i];
   }
   mergesort(data,temp,lo,point);
   mergesort(data,temp,point+1,hi);
