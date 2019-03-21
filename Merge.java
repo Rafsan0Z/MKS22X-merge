@@ -80,12 +80,15 @@ public static void insertionSort(int[] ary, int lo, int hi) {
 public static void mergesort(int[] data, int[] temp, int lo, int hi){
   if(hi == lo){return;}
   int point = (hi+lo)/2;
+  for(int i = lo; i < hi+1; i++){
+    temp[i] = data[i];
+  }
   mergesort(data,temp,lo,point);
   mergesort(data,temp,point+1,hi);
-  //merge code
+  merge(data,temp,lo,point,hi);
 }
 
-public static void merge(int[] data, int[] temp){
+public static void merge(int[] data, int[] temp, int lo, int point, int hi){
   //to be implemented!
 }
 
