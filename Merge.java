@@ -23,34 +23,7 @@ public static void mergesortHelper(int[] data, int[] temp, int lo, int hi){
 }
 
 public static void merge(int[] data, int lo, int point, int hi){
-  int counter = point+1;
-  int compare = counter;
-  int stop = counter;
-  int index = lo;
-  while(counter < hi){
-    for(int i = lo; i < stop; i++){
-      if(data[i] > data[counter]){
-        exchange(counter,i,data);
-        stop++;
-        counter++;
-        compare++;
-        i = stop;
-      }
-    }
-    if(compare == counter){
-      counter++;
-      compare++;
-    }
-  }
-  /*while(counter < hi && index < stop){
-    if(data[index] > data[counter]){
-      exchange(counter,index,data);
-      stop++;
-      counter++;
-      index = lo;
-    }
-    index++;
-  }*/
+  
 }
 
 
