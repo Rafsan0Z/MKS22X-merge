@@ -102,9 +102,18 @@ public static void merge(int[] orig, int[] data1, int[] data2){
       orig[index] = data1[i];
       i++;
     }
-    else if(data1.length <= i){}
-    else if(orig[j] >= orig[i]){}
-    else{}
+    else if(data1.length <= i){
+      orig[index] = data2[j];
+      j++;
+    }
+    else if(orig[j] >= orig[i]){
+      data[index] = data1[i];
+      i++;
+    }
+    else{
+      data[index] = data2[j];
+      j++;
+    }
     index++;
   }
 }
