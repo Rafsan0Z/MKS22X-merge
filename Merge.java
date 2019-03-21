@@ -84,8 +84,12 @@ public static void mergesort(int[] data, int lo, int hi){
   for(int i = 0; i <= point; i++){
     LSort[i] = data[i];
   }
+  int[] RSort = new int[hi-point+1];
+  for(int i = 0; i <= hi-point; i++){
+    RSort[i] = data[point+1+i];
+  }
   mergesort(LSort,0,point);
-  mergesort(RSort,0,hi);
+  mergesort(RSort,0,hi-point);
   merge(LSort,RSort);
 }
 
