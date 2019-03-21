@@ -19,18 +19,7 @@ public static int[] copy(int[] data){
 }
 
 public static void mergesortHelper(int[] data, int[] temp, int lo, int hi){
-  if(lo >= hi){return;}
-  else if(hi-lo+1 == 2){
-    if(data[lo] <= data[hi]){return;}
-    else{
-      exchange(hi,lo,data);
-      return;
-    }
-  }
-  int point = (lo+hi)/2;
-  mergesortHelper(data,lo,point);
-  mergesortHelper(data,point,hi);
-  //merge(data,lo,point,hi);
+  
 }
 
 public static void merge(int[] data, int lo, int point, int hi){
@@ -107,11 +96,11 @@ public static void merge(int[] orig, int[] data1, int[] data2){
       j++;
     }
     else if(orig[j] >= orig[i]){
-      data[index] = data1[i];
+      orig[index] = data1[i];
       i++;
     }
     else{
-      data[index] = data2[j];
+      orig[index] = data2[j];
       j++;
     }
     index++;
@@ -139,7 +128,7 @@ public static void main(String[] args){
   int[] data = new int[] {3,3,1,1,2,2};
   int[] data2 = new int[] {2,6,8,9,3,5,12,13,10,7};
   System.out.println(printArray(data2));
-  Mergesort(data2);
+  mergesort(data2);
   System.out.println(printArray(data2));
 
 }
