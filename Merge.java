@@ -90,17 +90,20 @@ public static void mergesort(int[] data, int lo, int hi){
   }
   mergesort(LSort,0,point);
   mergesort(RSort,0,hi-point);
-  merge(LSort,RSort);
+  merge(data,LSort,RSort);
 }
 
-public static void merge(int[] orig,int[] data1, int[] data2){
+public static void merge(int[] orig, int[] data1, int[] data2){
   int index = 0;
   int i = 0;
   int j = 0;
-  while(index <= data1.length + data2.length){
-    if(data2.length <= j){}
+  while(index <= orig.length){
+    if(data2.length <= j){
+      orig[index] = data1[i];
+      i++;
+    }
     else if(data1.length <= i){}
-    else if(data[j] >= data[i]){}
+    else if(orig[j] >= orig[i]){}
     else{}
     index++;
   }
