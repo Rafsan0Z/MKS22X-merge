@@ -70,28 +70,28 @@ public static void mergesort(int[] data, int lo, int hi){
   if(hi <= lo){return;}
   int point = (hi+1)/2;
   int[] LSort = new int[point];
-  for(int i = 0; i < point; i++){
+  int limit1 = LSort.length-1;
+  for(int i = 0; i <= limit1; i++){
     LSort[i] = data[i];
   }
   int[] RSort = new int[hi+1-point];
-  for(int i = 0; i <= hi-point; i++){
+  int limit2 = RSort.length-1;
+  for(int i = 0; i <= limit2; i++){
     RSort[i] = data[point+i];
   }
-  int limit1 = LSort.length-1;
-  int limit2 = RSort.length-1;
   mergesort(LSort,0,limit1);
   mergesort(RSort,0,limit2);
   int index = 0;
   int i = 0;
   int j = 0;
   while(index < data.length){
-    if(RSort.length < j){
-      data[index] = LSort[i];
-      i++;
-    }
-    else if(LSort.length <= i){
+    if(LSort.length <= i){
       data[index] = RSort[j];
       j++;
+    }
+    else if(RSort.length <= j){
+      data[index] = LSort[i];
+      i++;
     }
     else if(data[j] >= data[i]){
       data[index] = LSort[i];
