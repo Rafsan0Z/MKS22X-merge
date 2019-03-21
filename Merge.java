@@ -19,7 +19,7 @@ public static int[] copy(int[] data){
 }
 
 public static void mergesortHelper(int[] data, int[] temp, int lo, int hi){
-  
+
 }
 
 public static void merge(int[] data, int lo, int point, int hi){
@@ -68,17 +68,17 @@ public static void insertionSort(int[] ary, int lo, int hi) {
 
 public static void mergesort(int[] data, int lo, int hi){
   if(hi == lo){return;}
-  int point = (hi+lo)/2;
-  int[] LSort = new int[point+1];
-  for(int i = 0; i <= point; i++){
+  int point = (hi+1)/2;
+  int[] LSort = new int[point];
+  for(int i = 0; i < point; i++){
     LSort[i] = data[i];
   }
-  int[] RSort = new int[hi-point+1];
-  for(int i = 0; i <= hi-point; i++){
-    RSort[i] = data[point+1+i];
+  int[] RSort = new int[hi+1-point];
+  for(int i = 0; i < hi-point; i++){
+    RSort[i] = data[point+i];
   }
-  mergesort(LSort,0,point);
-  mergesort(RSort,0,hi-point);
+  mergesort(LSort,0,LSort.length-1);
+  mergesort(RSort,0,RSort.length-1);
   merge(data,LSort,RSort);
 }
 
@@ -86,7 +86,7 @@ public static void merge(int[] orig, int[] data1, int[] data2){
   int index = 0;
   int i = 0;
   int j = 0;
-  while(index <= orig.length){
+  while(index < orig.length){
     if(data2.length <= j){
       orig[index] = data1[i];
       i++;
