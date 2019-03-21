@@ -18,16 +18,21 @@ public static int[] copy(int[] data){
   return result;
 }
 
-public static void mergesortHelper(int[] data, int[] temp, int lo, int hi, int current){
+public static void mergesortHelper(int[] data, int[] temp, int lo, int hi){
   if(lo >= hi){return;}
   int point = (hi+lo)/2;
   mergesortHelper(data,temp,lo,point);
   mergesortHelper(data,temp,point+1,hi);
-  merge(data,temp,lo,point,hi);
+  merge(data,temp,lo,point,hi,1);
 }
 
-public static void merge(int[] data, int[] temp, int lo, int point, int hi){
-
+public static void merge(int[] data, int[] temp, int lo, int point, int hi, int current){
+  if(current == 0){
+    current = 1;
+  }
+  else if(current = 1){
+    current = 0;
+  }
 }
 
 
