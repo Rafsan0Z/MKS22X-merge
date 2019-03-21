@@ -81,32 +81,32 @@ public static void mergesort(int[] data, int lo, int hi){
   }
   mergesort(LSort,0,limit1);
   mergesort(RSort,0,limit2);
+
+}
+
+public static void merge(int[] orig, int[] data1, int[] data2){
   int index = 0;
   int i = 0;
   int j = 0;
   while(index < data.length){
-    if(LSort.length <= i){
-      data[index] = RSort[j];
+    if(data1.length <= i){
+      data[index] = data2[j];
       j++;
     }
-    else if(RSort.length <= j){
-      data[index] = LSort[i];
+    else if(data2.length <= j){
+      data[index] = data1[i];
       i++;
     }
-    else if(RSort[j] >= LSort[i]){
-      data[index] = LSort[i];
+    else if(data2[j] >= data1[i]){
+      data[index] = data1[i];
       i++;
     }
     else{
-      data[index] = RSort[j];
+      data[index] = data2[j];
       j++;
     }
     index++;
   }
-}
-
-public static void merge(int[] orig, int[] data1, int[] data2){
-
 }
 
 public static void exchange(int num1, int num2, int[] data){ // these are indices
