@@ -97,6 +97,12 @@ public static void merge(int[] data1, int[] data2){
   int index = 0;
   int i = 0;
   int j = 0;
+  while(index <= data1.length + data2.length){
+    if(data2.length <= j){}
+    else if(data1.length <= i){}
+    else if(data[j] >= data[i])}{}
+    else{}
+  }
 }
 
 public static void exchange(int num1, int num2, int[] data){ // these are indices
