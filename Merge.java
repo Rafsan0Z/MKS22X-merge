@@ -90,7 +90,9 @@ public static void mergesort(int[] data, int lo, int hi){
 }
 
 public static void merge(int[] data1, int[] data2){
-
+  int index = 0;
+  int i = 0;
+  int j = 0;
 }
 
 public static void exchange(int num1, int num2, int[] data){ // these are indices
