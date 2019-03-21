@@ -80,7 +80,7 @@ public static void insertionSort(int[] ary, int lo, int hi) {
 public static void mergesort(int[] data, int[] temp, int lo, int hi){
   if(hi == lo){return;}
   int point = (hi+lo)/2;
-  for(int i = lo; i < hi+1; i++){
+  for(int i = lo; i <= hi; i++){
     temp[i] = data[i];
   }
   mergesort(data,temp,lo,point);
@@ -93,14 +93,16 @@ public static boolean check(int[] temp, int lo, int point, int hi){
 }
 
 public static void merge(int[] data, int[] temp, int lo, int point, int hi){
-  for(int i = lo; i < hi+1; i++){
+  int point2 = point+1;
+  for(int i = lo; i <= hi; i++){
     if(check(temp,lo,point,hi)){
       data[i] = temp[lo];
       lo++;
     }
     else{
-      data[i] = temp[point+1];
-      point++;
+      System.out.println(i,point2);
+      data[i] = temp[point2];
+      point2++;
     }
   }
 }
@@ -126,7 +128,7 @@ public static void main(String[] args){
   int[] data = new int[] {3,3,1,1,2,2};
   int[] data2 = new int[] {2,6,8,9,3,5,12,13,10,7};
   System.out.println(printArray(data2));
-  mergesort(data2);
+  Mergesort(data2);
   System.out.println(printArray(data2));
 
 }
