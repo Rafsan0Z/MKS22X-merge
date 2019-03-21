@@ -19,6 +19,7 @@ public static int[] copy(int[] data){
 }
 
 public static void mergesortHelper(int[] data, int[] temp, int lo, int hi){
+  int point = (hi+lo)/2
   mergesortHelper(data,temp,lo,point);
   mergesortHelper(data,temp,point+1,hi);
   merge(data,temp,lo,point,hi);
