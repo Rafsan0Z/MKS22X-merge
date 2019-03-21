@@ -67,7 +67,10 @@ public static void insertionSort(int[] ary, int lo, int hi) {
 }
 
 public static void mergesort(int[] data, int lo, int hi){
-  if(hi <= lo){return;}
+  if(hi - lo <= 50){
+    insertionSort(data,lo,hi);
+    return;
+  }
   int point = (hi+1)/2;
   int[] LSort = new int[point];
   int limit1 = LSort.length-1;
