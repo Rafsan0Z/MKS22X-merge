@@ -19,11 +19,13 @@ public static int[] copy(int[] data){
 }
 
 public static void mergesortHelper(int[] data, int[] temp, int lo, int hi){
-
+  mergesortHelper(data,temp,lo,point);
+  mergesortHelper(data,temp,point+1,hi);
+  merge(data,temp,lo,point,hi);
 }
 
-public static void merge(int[] data, int lo, int point, int hi){
-  
+public static void merge(int[] data, int[] temp, int lo, int point, int hi){
+
 }
 
 
