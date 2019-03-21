@@ -88,22 +88,8 @@ public static void mergesort(int[] data, int[] temp, int lo, int hi){
   merge(data,temp,lo,point,point+1,hi);
 }
 
-public static boolean check(int[] temp, int lo, int point, int point2, int hi){
-  return lo <= point && (temp[point2] >= temp[lo] || hi < point2);
-}
-
 public static void merge(int[] data, int[] temp, int lo, int point, int point2, int hi){
-  for(int i = lo; i <= hi; i++){
-    if(lo <= point && (temp[point2] >= temp[lo] || hi < point2)){
-      data[i] = temp[lo];
-      lo++;
-    }
-    else{
-      System.out.println(i +" , " +point2);
-      data[i] = temp[point2];
-      point2++;
-    }
-  }
+
 }
 
 public static void exchange(int num1, int num2, int[] data){ // these are indices
