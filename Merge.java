@@ -89,7 +89,16 @@ public static void mergesort(int[] data, int[] temp, int lo, int hi){
 }
 
 public static void merge(int[] data, int[] temp, int lo, int point, int hi){
-  //to be implemented!
+  for(int i = lo; i < hi+1; i++){
+    if(lo <= point && (temp[point+1] >= temp[lo] || hi < point+1)){
+      data[i] = temp[lo];
+      lo++;
+    }
+    else{
+      data[i] = temp[point+1];
+      point++;
+    }
+  }
 }
 
 public static void exchange(int num1, int num2, int[] data){ // these are indices
