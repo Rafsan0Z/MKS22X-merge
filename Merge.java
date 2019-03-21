@@ -88,9 +88,13 @@ public static void mergesort(int[] data, int[] temp, int lo, int hi){
   merge(data,temp,lo,point,hi);
 }
 
+public static boolean check(int[] temp, int lo, int point, int hi){
+  return lo <= point && (temp[point+1] >= temp[lo] || hi < point+1);
+}
+
 public static void merge(int[] data, int[] temp, int lo, int point, int hi){
   for(int i = lo; i < hi+1; i++){
-    if(lo <= point && (temp[point+1] >= temp[lo] || hi < point+1)){
+    if(check(temp,lo,point,hi)){
       data[i] = temp[lo];
       lo++;
     }
