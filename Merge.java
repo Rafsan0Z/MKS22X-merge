@@ -18,7 +18,7 @@ public static int[] copy(int[] data){
   return result;
 }
 
-public static void mergesortHelper(int[] data, int lo, int hi){
+public static void mergesortHelper(int[] data, int[] temp, int lo, int hi){
   if(lo >= hi){return;}
   else if(hi-lo+1 == 2){
     if(data[lo] <= data[hi]){return;}
