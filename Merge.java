@@ -85,10 +85,10 @@ public static void mergesort(int[] data, int[] temp, int lo, int hi){
   }
   mergesort(data,temp,lo,point);
   mergesort(data,temp,point+1,hi);
-  merge(data,temp,lo,point,point+1,hi);
+  merge(LSort,RSort);
 }
 
-public static void merge(int[] data, int[] temp, int lo, int point, int point2, int hi){
+public static void merge(int[] data1, int[] data2){
 
 }
 
