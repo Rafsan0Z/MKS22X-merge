@@ -5,38 +5,6 @@ public static void mergesort(int[] data){
   mergesort(data,0,data.length-1);
 }
 
-public static void Mergesort(int[] data){
-  int[] temp = new int[data.length];
-  mergesortHelper(data,temp,0,data.length-1);
-}
-
-public static int[] copy(int[] data, int lo, int hi){
-  int[] result = new int[data.length];
-  for(int i = lo; i <= hi; i++){
-    result[i] = data[i];
-  }
-  return result;
-}
-
-public static void mergesortHelper(int[] data, int[] temp, int lo, int hi){
-  if(lo >= hi){return;}
-  int point = (hi+lo)/2;
-  temp = copy(data,lo,hi);
-  mergesortHelper(data,temp,lo,point);
-  mergesortHelper(data,temp,point+1,hi);
-  merge(data,temp,lo,point,hi,1);
-}
-
-public static void merge(int[] data, int[] temp, int lo, int point, int hi, int current){
-  if(current == 0){
-    current = 1;
-  }
-  else if(current == 1){
-    current = 0;
-  }
-}
-
-
 public static void insertionSort(int[] ary, int lo, int hi) {
   for(int i = lo; i < hi+1; i++) {
     int current = ary[i];
