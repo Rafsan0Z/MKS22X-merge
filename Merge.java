@@ -110,7 +110,7 @@ return result + "]";
 
 public static void main(String[] args){
   int[] data = new int[] {3,3,1,1,2,2};
-  int[] data2 = new int[] {2,6,8,9,3};
+  int[] data2 = new int[] {2,6,8,9,3,21,32,12,9,6,7,4,8};
   System.out.println(printArray(data2));
   mergesort(data2);
   System.out.println(printArray(data2));
